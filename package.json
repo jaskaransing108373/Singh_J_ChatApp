@@ -1,0 +1,18 @@
+{
+  "name": "jaschatapp",
+  "version": "1.0.0",
+  "main": "app.js",
+  "description": "a fun build node.np",
+  "scripts": {
+    "start-dev": "nodemon app",
+    "start-ui": "browser-sync start --proxy 'localhost:5050' --files 'index.html' 'public'",
+    "start": "node app"
+  },
+  "keywords": [],
+  "author": "jaskaran",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^3.1.0"
+  }
+}
