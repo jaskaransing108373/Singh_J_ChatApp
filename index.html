@@ -1,25 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
 
-    <title>Chat app</title>
+    <script src="https://kit.fontawesome.com/066bb77ccc.js" crossorigin="anonymous"></script>
+    <title>Pigeon Chat App</title>
 </head>
+
 <body>
-    <h1 class="hidden">Super chat app</h1>
-    <h4>Add a username to join the chat</h4>
-    <h6>or not, to stealth post</h6>
+    <main id="app">
+        <img src="/images/pig_logo.jpg" alt="logo">
+        <div class="loginPage">
+            <div class="logDiv">
+                <img src="/images/pig_logo.jpg" alt="logo">
+                <h1>Welcome to Pigeon chat App</h1>
 
-    <input type="text" placeholder="your handle">
-    <input type="password" placeholder="password">
+                <p>Please enter your Name to login</p>
 
-    <input type="submit" value="JOIN">
+                <form class="loginForm">
+                    <input v-model='nickname' type="text" id="nickname" class="nickname" placeholder="Name" required>
+                    <button @click.prevent='addNewMember' type="submit" class="nicknameButton">Go rock</button>
+                </form>
 
+            </div>
+        </div>
 
-    <!-- temp hack to bypass login -->
-    <a href="/chat">to chat page</a>
+        <header class="mainNav">
+            <h3>{{nickname}}</h3>
+            <li class="userDisplay"><i class="fas fa-users"></i></li>
+        </header>
+
+        <section class="memberList">
+
+            <h4>Members online</h4>
+
+            <ul id='members'>
+                <li v-for='member in members'>
+                    <div class="dot"></div>
+                    <p>{{ member.member }}</p>
+                </li>
+            </ul>
+        </section>
+
+        <section class="messages">
+            <ul class="messageList">
+                <newMessage class="message" v-for='message in messages' :msg='message'></newMessage>
+            </ul>
+        </section>
+
+        <form class="message-wrapper">
+            <textarea v-model='message' class="MsgBox" type="text" autocomplete="off" id="textarea"
+                placeholder="Type your msg in here"></textarea>
+            <button @click.prevent='dispatchMessage' type="submit" value='send'><i
+                    class="fas fa-paper-plane"></i></button>
+        </form>
+    </main>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script defer type="module" src="scripts/main.js"></script>
 </body>
+
 </html>
