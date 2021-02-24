@@ -1,2 +1,16 @@
-@import 'modules/_vars.scss';
-@import 'modules/_defaults.scss';
+
+@import 'modules/loginPage.scss';
+@import 'modules/_message.scss';
+@import 'modules/_members.scss';
+
+body{
+	font-family: sans-serif;
+}
+
+#app{
+	min-height: 100vh;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}
