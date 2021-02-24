@@ -1,0 +1,72 @@
+.message-wrapper{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 87%;
+    background: rgb(233, 233, 233);
+
+    .MsgBox{
+        border: none;
+        border-bottom: solid 1px rgb(0, 0, 0);
+        font-size: 16px;
+        font-family: sans-serif;
+        background: rgba(0,0,0,0);
+        flex-grow: 1;
+        
+    }
+
+    button{
+        background: rgba(0,0,0,0);
+        border: none;
+        font-size: 22px;
+        padding: 5px 20px;
+        cursor: pointer;
+    }
+}
+
+
+.messages{
+    width: 100%;
+    margin-right: 220px;
+    min-height: 100%;
+    margin-top: auto;
+    margin-bottom: 70px;
+    
+    
+    padding: 10px;
+    
+    color: rgb(207, 29, 29);
+    border-radius: 8px;
+    float: left;
+    
+
+    .messageList{
+        margin-top: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        p{
+            display: block;
+            align-self: flex-end;
+            margin-top: auto;
+            color: black;
+            margin: 5px;
+            padding: 10px 10px;
+            max-width: 90%;
+            margin-left: auto;
+            background-color: rgb(230, 222, 222);
+        }
+        .my-message {
+    background-color: rgb(92, 207, 92);
+    float: right;
+}
+        
+    }
+}
